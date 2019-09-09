@@ -1,0 +1,41 @@
+{
+  "name": "myproject",
+  "version": "0.0.1",
+  "description": "A framework for dynamic loading IIFE Namespaces, Messages, and Dependencies",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "stop": "",
+    "install": "",
+    "postinstall": "",
+    "postpack": "",
+    "postpublish": "",
+    "postrestart": "",
+    "poststart": "",
+    "poststop": "",
+    "posttest": "",
+    "postuninstall": "",
+    "postversion": "",
+    "preinstall": "",
+    "prepack": "",
+    "prepare": "",
+    "prepublish": "",
+    "prepublishOnly": "",
+    "prerestart": "",
+    "prestart": "",
+    "prestop": "",
+    "pretest": "",
+    "preuninstall": "",
+    "preversion": "",
+    "publish": "",
+    "restart": "",
+    "test": "echo 'Error: no test specified' &amp;&amp; exit 1",
+    "uninstall": "npm uninstall"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
