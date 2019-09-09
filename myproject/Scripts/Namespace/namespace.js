@@ -1,6 +1,6 @@
 'use strict';
 /*  Copyright 2018-2019, Charles Harrison Shubert.
-*   License: MIT
+*   License: ISC
 *
 *   Namespace.js creates a namespace defined in ./Scripts/Namespace/config.json
 *
