@@ -2,35 +2,31 @@
 /*  Copyright 2018-2019, Charles Harrison Shubert.
 *   License: ISC
 *
-*   Namespace.js creates a namespace defined in ./Scripts/Namespace/config.json
+*   loader.js
+*       creates empty config.json.name object
+*       loads config.json.signals
+*       loads config.json.components.
+*       proof config.json.name object
+*       attaches cpmfig.json.name object to the root
 *
-*     Namespace.js has two parts:
+*   @return none
+*   Errors: are thrown when loader.js fails to load config.json.signals or config.json.dependencies
+*     loader.js has two parts:
 *
 *       1. An Immediately Invoked Function Expression (IIFE - pronounced iffy) that
 *          that has two arguments:
 *            root
-*              when Namespace.js is called from:
+*              when loader.js is called from:
 *                a browser, root is "window"
 *                Node, root is "global"
 *                somewhere else, root is a parent namespace
 *
 *            factory
-*              calls the Namespace.js anonymous function to fetch config.json and
+*              calls the Loader.js anonymous function to fetch config.json and
 *                to populate the namespace.
 *
-*       2. Namespace.js anonymous function arguments are root and factory
+*       2. Loader.js anonymous function arguments are root and factory
 *
-*   Namespace.js:
-*    loads config.json messages
-*    loads config.json dependencies.
-*    proof the namespace
-*    attaches the namespace to the root
-*      using projectName which default to "myproject" in this template
-*      and should be changed to correspond to the project name for a
-*      template implementation
-*
-*   Returns: none
-*   Errors: are thrown when loads or running proofs fails
 */
 
 // noinspection ThisExpressionReferencesGlobalObjectJS
@@ -44,7 +40,7 @@
     const ingestMessages = (function(messages) {
     });
 
-    let fetchConfigURL = '../Scripts/Namespace/config.json';
+    let fetchConfigURL = '../Loader/config.json';
 
     fetch(fetchConfigURL)
         .then(function(response) {
@@ -66,12 +62,13 @@
             //          else if ((depencency object in namespace) && doesn't match loaded dependency object))
             //              throw error dependency version mismatch
 
-            console.log("myJson.namespace: " + myJson.namespace);
-            console.log("myJson.dependencies: " + myJson.dependencies);
-            let names = Object.getOwnPropertyNames(myJson.dependencies);
-            console.log("names: " + names);
-            // console.log("myJson.dependencies3: " + myJson.dependencies[2]);
-            return myJson.dependencies;
+            console.log("myJson.name: " + myJson.name);
+            console.log("myJson.version: " + myJson.version);
+            console.log("myJson.author: " + myJson.author);
+            console.log("myJson.license: " + myJson.license);
+            console.log("myJson.components: " + myJson.components);
+            console.log("myJson.signals: " + myJson.signals);
+            return myJson.components;
         })
         .catch()
     })

@@ -4,7 +4,7 @@
 *
 *   Other.js loads namespaces using ./config.json config file.
 *
-*     Namespace.js has two parts:
+*     Loader.js has two parts:
 *
 *       1. An Immediately Invoked Function Expression (IIFE - pronounced iffy) that
 *          that has two arguments:
@@ -19,10 +19,10 @@
 *              calls NamespaceLoader's anonymous function to fetch config.json
 *              and to populate the namespace.
 *
-*       2. Namespace.js's anonymous function arguments are root and factory
+*       2. Loader.js's anonymous function arguments are root and factory
 *
 *
-*   Namespace.js uses config.json to identify the namespace and urls to load.
+*   Loader.js uses config.json to identify the namespace and urls to load.
 *
 *     A namespace function returns a namespace object containing its
 *     public scope properties.
@@ -67,7 +67,7 @@
         //         return isValid;
         //     });
 
-        const fetchConfigURL = '../Scripts/Namespace/config.json';
+        const fetchConfigURL = '../Components/Loader/config.json';
 
         fetch(fetchConfigURL)
             .then(function(response) {
