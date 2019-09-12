@@ -2,9 +2,9 @@
 /*  Copyright 2018-2019, Charles Harrison Shubert.
 *   License: MIT
 *
-*   Other.js loads namespaces using ./config.json config file.
+*   component.js loads namespaces using ./component.json config file.
 *
-*     Loader.js has two parts:
+*     component.js has two parts:
 *
 *       1. An Immediately Invoked Function Expression (IIFE - pronounced iffy) that
 *          that has two arguments:
@@ -16,13 +16,13 @@
 *                  from another namespace, root is the caller's namespace
 *
 *            factory
-*              calls NamespaceLoader's anonymous function to fetch config.json
+*              calls NamespaceLoader's anonymous function to fetch component.json
 *              and to populate the namespace.
 *
-*       2. Loader.js's anonymous function arguments are root and factory
+*       2. component.js's anonymous function arguments are root and factory
 *
 *
-*   Loader.js uses config.json to identify the namespace and urls to load.
+*   component.js uses component.json to identify the namespace and urls to load.
 *
 *     A namespace function returns a namespace object containing its
 *     public scope properties.
@@ -67,7 +67,7 @@
         //         return isValid;
         //     });
 
-        const fetchConfigURL = '../Components/Loader/config.json';
+        const fetchConfigURL = '../Components/Ignition/component.json';
 
         fetch(fetchConfigURL)
             .then(function(response) {

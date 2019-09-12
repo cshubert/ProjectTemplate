@@ -7,7 +7,7 @@ Developers using this template create a GitHub Repository (https://github.com) t
 
 The template contains a LICENSE file chosen by the Developer, a README.md file, and four directories (Loader, Components, Signals, UX).
 
-Loader has project scope and contains loader.js that loads project Components from the Component directory and Signals from the Signals directory. Loader also is an example Component.
+Loader has project scope and contains component.js that loads project Components from the Component directory and Signals from the Signals directory. Loader also is an example Component.
 
 The UX (browser user experience) has project scope and contains an index.html that attaches Loader to a browser's global scope (i.e. window).
 

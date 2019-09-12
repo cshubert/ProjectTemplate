@@ -1,0 +1,40 @@
+{
+  "name": "MyProject5220",
+  "version": "0.0.1",
+  "author": "Charles Harrison Shubert <charlesshubert@gmail.com>",
+  "license": "ISC",
+  "signals": [
+    {
+      "name": "MySignal1",
+      "version": "0.0.0",
+      "author": "Charles Harrison Shubert <charlesshubert@gmail.com>",
+      "license": "ISC",
+      "location": "../Signals/MySignal1/mySignal1.js",
+      "scope": "name"
+    },
+    {
+      "name": "MySignal2",
+      "version": "0.0.0",
+      "author": "Charles Harrison Shubert <charlesshubert@gmail.com>",
+      "license": "ISC",
+      "location": "../Signals/MySignal2/mySignal2.js",
+      "scope": "name"
+    }
+  ],
+  "components": [
+    {
+      "name": "MyComponent1",
+      "version": "0.0.0",
+      "location": "../Components/MyComponent1/myComponent1.js",
+      "scope": "name",
+      "iife": ""
+    },
+    {
+      "name": "MyComponent2",
+      "version": "0.0.0",
+      "location": "../Components/MyComponent2/Pasrer.js",
+      "scope": "name",
+      "iife": ""
+    }
+  ]
+}
