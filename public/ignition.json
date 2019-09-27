@@ -1,0 +1,14 @@
+{
+  "name": "ProjectTemplate",
+  "version": "0.0.1",
+  "author": "Charles Harrison Shubert <charlesshubert@gmail.com>",
+  "license": "ISC",
+  "signals": [
+      "../Signals/MySignal1/component.js",
+      "../Signals/MySignal2/component.js"
+  ],
+  "components": [
+      "../Components/MyComponent1/component.js",
+      "../Components/MyComponent2/component.js"
+  ]
+}

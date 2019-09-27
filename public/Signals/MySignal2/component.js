@@ -2,9 +2,9 @@
 /*  Copyright 2018-2019, Charles Harrison Shubert.
 *   License: MIT
 *
-*   component.js loads namespaces using ./component.json config file.
+*   ignition.js loads namespaces using ./ignition.json config file.
 *
-*     component.js has two parts:
+*     ignition.js has two parts:
 *
 *       1. An Immediately Invoked Function Expression (IIFE - pronounced iffy) that
 *          that has two arguments:
@@ -16,13 +16,13 @@
 *                  from another namespace, root is the caller's namespace
 *
 *            factory
-*              calls NamespaceLoader's anonymous function to fetch component.json
+*              calls NamespaceLoader's anonymous function to fetch ignition.json
 *              and to populate the namespace.
 *
-*       2. component.js's anonymous function arguments are root and factory
+*       2. ignition.js's anonymous function arguments are root and factory
 *
 *
-*   component.js uses component.json to identify the namespace and urls to load.
+*   ignition.js uses ignition.json to identify the namespace and urls to load.
 *
 *     A namespace function returns a namespace object containing its
 *     public scope properties.
@@ -67,30 +67,30 @@
         //         return isValid;
         //     });
 
-        const fetchConfigURL = '../Components/Ignition/component.json';
+        const fetchConfigURL = `../Signals/MySignal2/component.json`;
 
         fetch(fetchConfigURL)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(myJson) {
-                // todo:
-                //  load the config file
-                //  load the dependencies:
-                //      If dependency is already loaded
-                //          if proof fails attach dependency to namespace
-                //              else use existing dependency
-                //          else
-                //             attach dependency to namspace
-                //  attach the dependency to the namespace
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(myJson) {
+            // todo:
+            //  load the config file
+            //  load the dependencies:
+            //      If dependency is already loaded
+            //          if proof fails attach dependency to namespace
+            //              else use existing dependency
+            //          else
+            //             attach dependency to namspace
+            //  attach the dependency to the namespace
 
-                console.log("myJson.name: " + myJson.name);
-                console.log("myJson.dependencies: " + myJson.dependencies);
-                let names = Object.getOwnPropertyNames(myJson.dependencies);
-                console.log("names: " + names);
-                // console.log("myJson.dependencies3: " + myJson.dependencies[2]);
-                return myJson.dependencies;
-            });
+            console.log("myJson.name: " + myJson.name);
+            console.log("myJson.dependencies: " + myJson.dependencies);
+            let names = Object.getOwnPropertyNames(myJson.dependencies);
+            console.log("names: " + names);
+            // console.log("myJson.dependencies3: " + myJson.dependencies[2]);
+            return myJson.dependencies;
+        });
 
     })
 
