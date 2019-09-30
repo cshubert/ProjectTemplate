@@ -1,0 +1,14 @@
+{
+  "name": "ProjectTemplate",
+  "version": "0.0.1",
+  "author": "Charles Harrison Shubert <charlesshubert@gmail.com>",
+  "license": "ISC",
+  "signals": [
+      "../SIGNAL/SignalEx1/signal.js",
+      "../SIGNAL/SignalEx2/signal.js"
+  ],
+  "transforms": [
+      "../TRANSFORM/TransformEx1/transform.js",
+      "../TRANSFORM/TransformEx2/transform.js"
+  ]
+}
