@@ -2,33 +2,25 @@
 /*  Copyright 2018-2019, Charles Harrison Shubert.
 *   License: MIT
 *
-*   ignition.js loads namespaces using ./ignition.json config file.
+*   transform.js loads transform.json config file.
 *
-*     ignition.js has two parts:
+*     transform.js has two parts:
 *
-*       1. An Immediately Invoked Function Expression (IIFE - pronounced iffy) that
-*          that has two arguments:
+*       1. An Immediately Invoked Function Expression (IIFE) has two arguments:
 *            root
-*              Object where NamespaceLoader will attach the namespace.
-*                When called
-*                  from a browser, root is "window"
-*                  from Node, root is "global"
-*                  from another namespace, root is the caller's namespace
+*              When called from:
+*                  browser, root is "window"
+*                  Node, root is "global"
+*                  another transform, root is the caller's transform object
 *
 *            factory
-*              calls NamespaceLoader's anonymous function to fetch ignition.json
-*              and to populate the namespace.
+*              calls the anonymous function to fetch transform.json
+*              to populate this transform object.
 *
-*       2. ignition.js's anonymous function arguments are root and factory
+*       2. transform.js's anonymous function arguments are root and factory
 *
-*
-*   ignition.js uses ignition.json to identify the namespace and urls to load.
-*
-*     A namespace function returns a namespace object containing its
-*     public scope properties.
-*
-*     Proof tests are run on the namespace object prior its attachment to
-*     the attachment to the root.
+*     Positive Proof tests on functionality are run on the transform object prior its attachment to
+*     the root. Negative Proof tests on data validity are run by Signals connecting Transforms
 *
 */
 
@@ -37,9 +29,9 @@
         factory.call(root,factory);
     }(this, function() {
 
-        const ingestNamespace = (function(dependencies, json) {
+        const ingestNamespace = (function(transforms, json) {
             let namespace = {};
-            console.log("ingestNamespace: " + dependencies, json);
+            console.log("ingestNamespace: " + transforms, json);
             return namespace;
         });
 
@@ -67,16 +59,16 @@
         //         return isValid;
         //     });
 
-        const fetchConfigURL = './Components/MyComponent2/ignition.json';
+        const transformConfigURL = './TRANSFORM/TransformEx2/transform.json';
 
-        fetch(fetchConfigURL)
+        fetch(transformConfigURL)
             .then(function(response) {
                 return response.json();
             })
             .then(function(myJson) {
                 // todo:
                 //  load the config file
-                //  load the dependencies:
+                //  load the transforms:
                 //      If dependency is already loaded
                 //          if proof fails attach dependency to namespace
                 //              else use existing dependency
@@ -85,11 +77,8 @@
                 //  attach the dependency to the namespace
 
                 console.log("myJson.name: " + myJson.name);
-                console.log("myJson.dependencies: " + myJson.dependencies);
-                let names = Object.getOwnPropertyNames(myJson.dependencies);
-                console.log("names: " + names);
-                // console.log("myJson.dependencies3: " + myJson.dependencies[2]);
-                return myJson.dependencies;
+                console.log("myJson.signals: " + myJson.signals);
+                console.log("myJson.transforms: " + myJson.transforms);
             });
 
     })
